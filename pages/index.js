@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -13,9 +14,11 @@ export default function Home() {
       <main>
         <h1>Countries API using nextjs</h1>
         <div>
-          <a href="/countries">
+        <Link href="/countries">
+          <a>
             <h2>Countries</h2>
           </a>
+          </Link>
         </div>
       </main>
 

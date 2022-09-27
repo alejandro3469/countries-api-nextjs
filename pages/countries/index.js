@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function index({ data }) {
   return (
@@ -11,10 +12,12 @@ export default function index({ data }) {
             <div>
               <img src={item.flags.png} alt={`${item.name.common}' name`} />
             </div>
-            <a href={`/countries/${item.cca2.toLowerCase()}`}>
-              <h2>{item.name.common}</h2>
-              <span>{item.name.official}</span>
-            </a>
+            <Link href={`/countries/${item.cca2.toLowerCase()}`}>
+              <a>
+                <h2>{item.name.common}</h2>
+                <span>{item.name.official}</span>
+              </a>
+            </Link>
             <p>{item.ccn3}</p>
           </li>
         ))}
