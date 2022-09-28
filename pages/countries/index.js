@@ -1,24 +1,40 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SearchBar from "../components/SearchBar";
 
 export default function index({ data }) {
   return (
-    <div>
-      <h1>Countries</h1>
-      <ul>
+    <div className="countries-page">
+      <SearchBar />
+      <div className="total-of-results">
+        {`${data.length} items`}
+      </div>
+      <ul className="countries-list">
         {data.map((item, _index) => (
-          <li key={_index}>
-            <div>
-              <img src={item.flags.png} alt={`${item.name.common}' name`} />
+          <li name={`country${_index}`} className="card" key={_index}>
+            <div className="image-container">
+              {/*<img className="image" src={item.flags.svg} alt={`${item.name.common}' name`} />*/}
             </div>
-            <Link href={`/countries/${item.cca2.toLowerCase()}`}>
-              <a>
-                <h2>{item.name.common}</h2>
-                <span>{item.name.official}</span>
-              </a>
-            </Link>
-            <p>{item.ccn3}</p>
+            <div className="country-data">
+              <Link href={`/countries/${item.cca2.toLowerCase()}`}>
+                <a>
+                  <div className="country-name">
+                    <div className="code-name">
+                      <h2 className="country-code">{item.cca2}</h2>
+                      <span className="official-country-name">
+                        {item.name.common}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="material-symbols-outlined icon">
+                        chevron_right
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
           </li>
         ))}
       </ul>
