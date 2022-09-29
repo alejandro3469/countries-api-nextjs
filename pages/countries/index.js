@@ -24,13 +24,18 @@ export default function Index({ data }) {
   }, [search]);
 
   useEffect(() => {
-    if (searchedCountries) {
+    if (searchedCountries && searchedCountries.length !== 0) {
       console.log(searchedCountries);
       setCountries(searchedCountries);
+    } else {
+      if (data) {
+        setCountries(data);
+      }
     }
   }, [searchedCountries]);
+
   useEffect(() => {
-      console.log(countries);
+    console.log(countries);
   }, [countries]);
 
   return (
@@ -48,9 +53,9 @@ export default function Index({ data }) {
             ></input>
           </div>
 
-          <div className="total-of-results">{`${data.length} items`}</div>
+          <div className="total-of-results">{`${countries.length} items`}</div>
           <ul className="countries-list">
-            {data.map((item, _index) => (
+            {countries.map((item, _index) => (
               <li name={`country${_index}`} className="card" key={_index}>
                 <div className="image-container">
                   {/*<img className="image" src={item.flags.svg} alt={`${item.name.common}' name`} />*/}
