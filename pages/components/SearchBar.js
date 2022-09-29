@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ onchange }) {
   return (
     <div className="searchbar-container">
       <div className="curve"></div>
