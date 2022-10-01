@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,17 +14,13 @@ export default function Home() {
       <main>
         <h1>Countries API using nextjs</h1>
         <div>
-        <Link href="/countries">
-          <a>
-            <h2>Countries</h2>
-          </a>
+          <Link href="/countries">
+            <a className="link">Countries</a>
           </Link>
         </div>
       </main>
 
-      <footer>
-        
-      </footer>
+      <footer></footer>
     </div>
   );
 }
