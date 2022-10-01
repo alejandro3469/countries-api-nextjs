@@ -28,6 +28,22 @@ ul {
   list-style: none;
 }
 
+/* --------- Index PAGE --------- */
+.index-page {
+  background-color: white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.index-page main {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+
 /* --------- Countries index PAGE --------- */
 .countries-page {
   background-color: #ECEFF4;
@@ -135,6 +151,7 @@ ul {
   background-color: none;
   font-style: oblique;
   transition: background-color 0.4s ease-out;
+
 }
 .link:hover {
   background-color: #ECEFF4;
