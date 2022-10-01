@@ -6,20 +6,30 @@ import SearchBar from "../components/SearchBar";
 export default function Index({ data }) {
   const [searchedCountries, setSearchedCountries] = useState(null);
   const [countries, setCountries] = useState(data ? data : null);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const searchCountries = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    if (countries && search) {
+    if (data === null || data.length === 0) {
+      setErrorMessage(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log(search.length);
+    if (data && search && search !== "" && search.length !== 0) {
       console.log(search);
       setSearchedCountries(
-        countries.filter((array) => {
-          return array.name.common.includes(search);
+        data.filter((array) => {
+          return array.name.common.toLowerCase().includes(search.toLowerCase());
         })
       );
+    } else {
+      setSearchedCountries(data);
     }
   }, [search]);
 
@@ -27,10 +37,12 @@ export default function Index({ data }) {
     if (searchedCountries && searchedCountries.length !== 0) {
       console.log(searchedCountries);
       setCountries(searchedCountries);
-    } else {
-      if (data) {
-        setCountries(data);
-      }
+    }
+
+    if (searchedCountries && searchedCountries.length === 0) {
+      console.log(searchedCountries);
+      setCountries(null);
+      setErrorMessage(2);
     }
   }, [searchedCountries]);
 
@@ -50,6 +62,7 @@ export default function Index({ data }) {
               placeholder={"Search by name"}
               className="search-input"
               onChange={searchCountries}
+              value={search}
             ></input>
           </div>
 
@@ -83,8 +96,30 @@ export default function Index({ data }) {
             ))}
           </ul>
         </>
+      ) : errorMessage === 1 ? (
+        <div className="error-message-container">
+          Something went wrong :{"("} try again later
+        </div>
       ) : (
-        <div>Something went wrong :{"("} try again later</div>
+        <>
+          <div className="searchbar-container">
+            <div className="curve"></div>
+            <span className="material-symbols-outlined icon2">search</span>
+            <input
+              type={"text"}
+              placeholder={"Search by name"}
+              className="search-input"
+              onChange={searchCountries}
+              value={search}
+            ></input>
+          </div>
+          <div className="error-message-container">
+            <span class="material-symbols-outlined sad-face-icon">
+              sentiment_very_dissatisfied
+            </span>
+            <span>No results to show</span>
+          </div>
+        </>
       )}
     </div>
   );
