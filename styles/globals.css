@@ -38,15 +38,18 @@ ul {
   line-height: 1.3;
 }
 .index-page main {
-  
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-
 .pages-ul {
   list-style: disc;
   list-style-position: inside;
+}
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 
