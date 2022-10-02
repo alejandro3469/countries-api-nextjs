@@ -21,7 +21,7 @@ export default function Home() {
           </Link>
         </h1>
         <div>
-          This is aproject for practicing the use of the Next.js hooks Use{" "}
+          This is a project for practicing the use of the Next.js hooks{" "}
           <span
             style={{ "font-style": "oblique", "background-color": "#ECEFF4" }}
           >
@@ -33,7 +33,7 @@ export default function Home() {
           >
             getStaticPaths
           </span>{" "}
-          using a restfull api
+          using a restful api to generate dynamic content and pages
           <div>
             <Link href="/countries">
               <a className="link">Check out the project</a>
@@ -61,7 +61,7 @@ export default function Home() {
             <li>
               Countries-individual pages {"("}
               <Link href={"#"}>
-                <a className="link">{"(/countries/[country-code])"}</a>
+                <a className="link">{"/countries/[country-code]"}</a>
               </Link>
               {")"}
             </li>
@@ -74,10 +74,24 @@ export default function Home() {
             <li>{'https://restcountries.com/v3.1/alpha/{code}'}</li>
           </ul>
         </div>
+        <div className="main-section">
+          <h3>{'Next.js hooks'}</h3>
+          <ul className="pages-ul">
+            <li>{'getStaticProps'}</li>
+            <li>{'getStaticPaths '}</li>
+          </ul>
+        </div>
+        <div className="main-section">
+          <h3>{"What's to learn"}</h3>
+          <ul className="pages-ul">
+            <li> </li>
+            <li> </li>
+          </ul>
+        </div>
       </main>
       <footer>
         Made with love by{" "}
-        <Link href={" https://portfolio-flax-beta-53.vercel.app/"}>
+        <Link href={" https:/portfolio-flax-beta-53.vercel.app/"}>
           <a className="link">Alejandro Pérez</a>
         </Link>
       </footer>
