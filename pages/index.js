@@ -15,8 +15,8 @@ export default function Home() {
         <h1 style={{ "font-weight": "500" }}>
           <Link href={"https://restcountries.com/"}>
             <a className="link">REST Countries API</a>
-          </Link>
-          app using
+          </Link>{" "}
+          app using{" "}
           <Link href={"https://nextjs.org/"}>
             <a className="link">Next{".js"}</a>
           </Link>
@@ -41,19 +41,37 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <h2>Development</h2>
+        {/*<h2>Development</h2*/}
         <h3>Pages</h3>
-        <ul>
-          <li>index {" (/)"}</li>
-          <li>Countries index {"/countries"}</li>
-          <li>Countrie-specific pages {"/countries/[country-code]"}</li>
+        <ul className="pages-ul">
+          <li>
+            index {"("}
+            <Link href={"/"}>
+              <a className="link">{"/"}</a>
+            </Link>
+            {")"}{" "}
+          </li>
+          <li>
+            Countries index {"("}
+            <Link href={"/countries"}>
+              <a className="link">{"/countries"}</a>
+            </Link>
+            {")"}
+          </li>
+          <li>
+            Countries-individual pages {"("}
+            <Link href={"#"}>
+              <a className="link">{"(/countries/[country-code])"}</a>
+            </Link>
+            {")"}
+          </li>
         </ul>
         <h4>API</h4>
         Rest countries
         <h3></h3>
       </main>
 
-      <footer></footer>
+      <footer>Made with love by Alejandro Pérez</footer>
     </div>
   );
 }
