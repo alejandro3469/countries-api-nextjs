@@ -82,7 +82,7 @@ export default function Home() {
           </ul>
         </div>
         <div className="main-section">
-          <h3>{"What's to learn"}</h3>
+          <h3>{"My notes"}</h3>
           <ul className="pages-ul">
             <li> </li>
             <li> </li>
