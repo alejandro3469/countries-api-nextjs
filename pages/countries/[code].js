@@ -42,10 +42,10 @@ export default function Country({ data }) {
             {currencies.map((currency, _index) => (
               <li className="flex-inline-8" key={_index}>
                 <span className="light-color currency-name">
-                  {currency.name}
+                  {currency.about.symbol}
                 </span>
                 <span>
-                {" · "}{currency.about.symbol} {" · "}
+                {" · "}{currency.name} {" · "}
                 </span>
                 <span>{currency.about.name}</span>
               </li>
