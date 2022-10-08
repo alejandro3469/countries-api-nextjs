@@ -39,7 +39,11 @@ export default function Country({ data }) {
 
       <div className="gap-8">
         <h3>Flag</h3>
-        <img style={{'border': '8px solid #ECEFF4', 'background-color': '#ECEFF4'}} src={data.flags.png} width='80px' />
+        <img
+          style={{ border: "8px solid #ECEFF4", "background-color": "#ECEFF4" }}
+          src={data.flags.png}
+          width="80px"
+        />
       </div>
 
       <div className="gap-8">
@@ -47,13 +51,15 @@ export default function Country({ data }) {
         <p>{data.capital}</p>
       </div>
 
-      <div className="gap-8">
-        <h3>Region</h3>
-        <p>{data.region}</p>
-      </div>
-      <div className="gap-8">
-        <h3>Subregion</h3>
-        <p>{data.subregion}</p>
+      <div className="flex-inline">
+        <div className="gap-8">
+          <h3>Region</h3>
+          <p>{data.region}</p>
+        </div>
+        <div className="gap-8">
+          <h3>Subregion</h3>
+          <p>{data.subregion}</p>
+        </div>
       </div>
 
       <div className="gap-8">
@@ -71,7 +77,8 @@ export default function Country({ data }) {
                   {currency.about.symbol}
                 </span>
                 <span>
-                {" · "}{currency.name} {" · "}
+                  {" · "}
+                  {currency.name} {" · "}
                 </span>
                 <span>{currency.about.name}</span>
               </li>

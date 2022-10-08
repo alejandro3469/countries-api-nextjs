@@ -231,6 +231,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 100vh;
 }
 .subtitle1 {
   color: #4c566aa5;
