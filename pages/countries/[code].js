@@ -39,7 +39,7 @@ export default function Country({ data }) {
 
       <div className="gap-8">
         <h3>Flag</h3>
-        <img src={data.flags.svg} width='80px' />
+        <img style={{'border': '8px solid #ECEFF4', 'background-color': '#ECEFF4'}} src={data.flags.png} width='80px' />
       </div>
 
       <div className="gap-8">
@@ -58,7 +58,7 @@ export default function Country({ data }) {
 
       <div className="gap-8">
         <h3>Population</h3>
-        <p>{data.population}</p>
+        <p className="number">{data.population}</p>
       </div>
 
       {currencies && (
