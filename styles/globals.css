@@ -36,6 +36,7 @@ ul {
   flex-direction: column;
   gap: 32px;
   line-height: 1.3;
+  min-height: 100vh;
 }
 .index-page main {
   display: flex;
