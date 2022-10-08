@@ -22,6 +22,7 @@ export default function Country({ data }) {
   return (
     <div className="country-container">
       <h1>{data.cca2}</h1>
+
       <div className="gap-8">
         <h3>Name</h3>
         <div className="flex-inline">
@@ -35,6 +36,31 @@ export default function Country({ data }) {
           </div>
         </div>
       </div>
+
+      <div className="gap-8">
+        <h3>Flag</h3>
+        <img src={data.flags.svg} width='80px' />
+      </div>
+
+      <div className="gap-8">
+        <h3>Capital</h3>
+        <p>{data.capital}</p>
+      </div>
+
+      <div className="gap-8">
+        <h3>Region</h3>
+        <p>{data.region}</p>
+      </div>
+      <div className="gap-8">
+        <h3>Subregion</h3>
+        <p>{data.subregion}</p>
+      </div>
+
+      <div className="gap-8">
+        <h3>Population</h3>
+        <p>{data.population}</p>
+      </div>
+
       {currencies && (
         <div className="gap-8">
           <h3>Currencies</h3>
