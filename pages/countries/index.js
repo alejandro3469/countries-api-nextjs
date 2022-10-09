@@ -54,6 +54,13 @@ export default function Index({ data }) {
     <div className="countries-page">
       {countries ? (
         <>
+          <div className="navigation">
+            <Link href={'/'}>
+              <a className="back">
+                <span className="material-symbols-outlined">arrow_back</span>
+              </a>
+            </Link>
+          </div>
           <div className="searchbar-container">
             <div className="curve"></div>
             <span className="material-symbols-outlined icon2">search</span>
