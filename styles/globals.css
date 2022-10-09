@@ -291,6 +291,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-self: flex-end;
 }
 footer div{
   padding: 8px 0;
