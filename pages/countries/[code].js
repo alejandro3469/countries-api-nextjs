@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 export default function Country({ data }) {
   const [currencies, setCurrencies] = useState(null);
@@ -139,6 +140,7 @@ export default function Country({ data }) {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "../components/SearchBar";
+import Footer from "../components/Footer";
 
 export default function Index({ data }) {
   const [searchedCountries, setSearchedCountries] = useState(null);
@@ -128,6 +129,7 @@ export default function Index({ data }) {
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 }

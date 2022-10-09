@@ -286,10 +286,11 @@ ul {
 footer {
   padding: 24px 16px;
 
-  background-color: #eeeeee;
+  
+  background-color: #ECEFF4;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 footer div{
   padding: 8px 0;
